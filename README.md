@@ -9,6 +9,8 @@ SQL_data_config: SQL script used to engineer the 6 table's content & analyse the
 
 Table Data Diagram (Quick DBD): Diagram of Data build process, illustrating necessary Foreign Key relationships which were implemented in the SQL script.
 
+Quick DBD script for diagram.txt: Script responsible for creating 'Table Data Diagram (Quick DBD)'. (Directly correlates with tables engineered by the SQL script, despite their different syntax).
+
 WITHIN Starter_Code FOLDER, PLEASE FIND:
 data folder containing all the provided csv files which were sourced by provided SQL script in previously stated file.
 
