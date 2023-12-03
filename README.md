@@ -15,21 +15,32 @@ data folder containing all the provided csv files which were sourced by provided
 TABLE HEADS
 ------------
 DEPARTMENT TABLE SCREENSHOT (HEAD):
+
 <img width="322" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/c8d04000-68d7-4e7e-b507-4b7d1dfd565c">
 
+
 TITLES TABLE SCREENSHOT (HEAD):
+
 <img width="304" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/10928bd0-4477-469a-bb3d-f7dbc252ade2">
 
+
 SALARIES TABLE SCREENSHOT (HEAD):
+
 <img width="230" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/1ff241f6-deef-4053-bf27-f54725a79331">
 
+
 DEPT_EMP TABLE SCREENSHOT (HEAD):
+
 <img width="266" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/8e4bc2cb-e569-4153-b7a4-ad3b8ce487c5">
 
+
 DEPT_MANAGER TABLE SCREENSHOT (HEAD):
+
 <img width="287" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/228960b5-6a1a-414f-9e56-08e411594fdf">
 
+
 EMPLOYEES TABLE SCREENSHOT (HEAD):
+
 <img width="743" alt="image" src="https://github.com/braydonnugent/SQL_challenge/assets/142812919/c1343aa7-ea22-4e99-9df1-23bd974598e0">
 
 
