@@ -1,0 +1,38 @@
+department
+-
+dept_id SERIAL PK
+dept_no VARCHAR UNIQUE
+dept_name VARCHAR UNIQUE
+
+titles
+-
+title_id VARCHAR UNIQUE
+title VARCHAR UNIQUE
+
+salaries
+-
+emp_id SERIAL PK
+emp_no INT UNIQUE
+salary INT
+
+dept_emp
+-
+emp_id SERIAL PK
+emp_no INT! FK >- salaries.emp_no
+dept_no VARCHAR FK >- department.dept_no
+
+dept_manager
+-
+dept_no VARCHAR FK >- department.dept_no
+emp_no INT FK >- salaries.emp_no
+
+employees
+-
+emp_id SERIAL PK
+emp_no INT FK >- salaries.emp_no
+emp_title_id VARCHAR FK >- titles.title_id
+birth_date VARCHAR
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date VARCHAR
