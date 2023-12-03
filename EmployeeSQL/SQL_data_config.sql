@@ -5,18 +5,21 @@ CREATE TABLE department(
     dept_no VARCHAR UNIQUE,
     dept_name VARCHAR UNIQUE
 );
+SELECT * FROM department LIMIT 10;
 
 CREATE TABLE titles(
 	titles_id SERIAL PRIMARY KEY,
     title_id VARCHAR UNIQUE,
     title VARCHAR UNIQUE
 );
+SELECT * FROM titles LIMIT 10;
 
 CREATE TABLE salaries(
     salaries_id SERIAL PRIMARY KEY,
     emp_no INT UNIQUE,
     salary INT
 );
+SELECT * FROM salaries LIMIT 10;
 
 CREATE TABLE dept_emp (
     dept_emp_id SERIAL PRIMARY KEY,
@@ -25,6 +28,7 @@ CREATE TABLE dept_emp (
     FOREIGN KEY (dept_no) REFERENCES department(dept_no),
     FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
 );
+SELECT * FROM dept_emp LIMIT 10;
 
 CREATE TABLE dept_manager (
     dept_manager_id SERIAL PRIMARY KEY,
@@ -33,6 +37,7 @@ CREATE TABLE dept_manager (
     FOREIGN KEY (dept_no) REFERENCES department(dept_no),
     FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
 );
+SELECT * FROM dept_manager LIMIT 10;
 
 CREATE TABLE employees (
     employees_id SERIAL PRIMARY KEY,
@@ -46,6 +51,7 @@ CREATE TABLE employees (
     FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
     FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
 );
+SELECT * FROM employees LIMIT 10;
 
 COPY department(dept_no, dept_name) FROM 'C:\Users\nugen\Desktop\DATA ANALYTICS COURSE\Module 9 (SQL)\SQL_challenge\Starter_Code\data\departments.csv' DELIMITER ',' CSV HEADER;
 COPY salaries(emp_no, salary) FROM 'C:\Users\nugen\Desktop\DATA ANALYTICS COURSE\Module 9 (SQL)\SQL_challenge\Starter_Code\data\salaries.csv' DELIMITER ',' CSV HEADER;
@@ -73,12 +79,9 @@ SELECT
     dm.emp_no AS manager_emp_no,
     e.last_name AS manager_last_name,
     e.first_name AS manager_first_name
-FROM 
-    dept_manager dm
-JOIN 
-    department d ON dm.dept_no = d.dept_no
-JOIN 
-    employees e ON dm.emp_no = e.emp_no;
+FROM dept_manager dm
+JOIN department d ON dm.dept_no = d.dept_no
+JOIN employees e ON dm.emp_no = e.emp_no;
 
 --List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
 SELECT 
@@ -86,12 +89,9 @@ SELECT
     e.last_name,
     e.first_name,
     d.dept_name
-FROM 
-    employees e
-JOIN 
-    dept_emp de ON e.emp_no = de.emp_no
-JOIN 
-    department d ON de.dept_no = d.dept_no;
+FROM employees e
+JOIN dept_emp de ON e.emp_no = de.emp_no
+JOIN department d ON de.dept_no = d.dept_no;
 
 --List the first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
 SELECT first_name, last_name, sex
