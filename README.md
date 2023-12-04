@@ -56,7 +56,7 @@ There are likely more correlations which could be made such as the foreign key '
 
 Ultimately minimal correlations were used to achieve the desired result.
 
-VARCHAR UNLIMITED 
-Opted not to limit columns with VARCHAR datatypes. The required results for each table were still acheived without the limitations. Additionally applying limit to VARCHAR will risk leaving out essential rows from tables which may exceed limit. 
+VARCHAR LIMITS
+Despite there being no necessary difference in having a limit for VARCHAR datatypes, they were implemented nonetheless as it was part of the criteria. There was no clear indicator as to what the VARCHAR limits should be, so leniant values were provided to avoid the risk of leaving out certain rows in the data. Afterall, the main tables are supposed to consist of the raw data provided by the task materials.
 
-Ultimately, it is believed to be unnecessary as there was no criteria specifying VARCHAR datatypes were to fit within a specified length.
+I hope these notes & acknowledgements are useful & understandable.
