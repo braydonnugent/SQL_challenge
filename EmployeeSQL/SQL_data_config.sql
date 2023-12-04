@@ -1,16 +1,16 @@
---DATA ENGINEERING
+--DATA ENGINEERING--
 
 CREATE TABLE department(
     department_id SERIAL PRIMARY KEY,
-    dept_no VARCHAR UNIQUE,
-    dept_name VARCHAR UNIQUE
+    dept_no VARCHAR(20) UNIQUE,
+    dept_name VARCHAR(20) UNIQUE
 );
 SELECT * FROM department LIMIT 10;
 
 CREATE TABLE titles(
 	titles_id SERIAL PRIMARY KEY,
-    title_id VARCHAR UNIQUE,
-    title VARCHAR UNIQUE
+    title_id VARCHAR(20) UNIQUE,
+    title VARCHAR(20) UNIQUE
 );
 SELECT * FROM titles LIMIT 10;
 
@@ -24,7 +24,7 @@ SELECT * FROM salaries LIMIT 10;
 CREATE TABLE dept_emp (
     dept_emp_id SERIAL PRIMARY KEY,
     emp_no INT NOT NULL, 
-    dept_no VARCHAR,
+    dept_no VARCHAR(20),
     FOREIGN KEY (dept_no) REFERENCES department(dept_no),
     FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
 );
@@ -39,15 +39,16 @@ CREATE TABLE dept_manager (
 );
 SELECT * FROM dept_manager LIMIT 10;
 
+DROP TABLE employees;
 CREATE TABLE employees (
     employees_id SERIAL PRIMARY KEY,
     emp_no INT,
-    emp_title_id VARCHAR,
-    birth_date VARCHAR,
-    first_name VARCHAR,
-    last_name VARCHAR,
-    sex VARCHAR,
-    hire_date VARCHAR,
+    emp_title_id VARCHAR(20),
+    birth_date VARCHAR(10),
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    sex CHAR,
+    hire_date VARCHAR(10),
     FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
     FOREIGN KEY (emp_no) REFERENCES salaries(emp_no)
 );

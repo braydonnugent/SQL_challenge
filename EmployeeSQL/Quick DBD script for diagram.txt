@@ -1,13 +1,13 @@
 department
 -
 dept_id SERIAL PK
-dept_no VARCHAR UNIQUE
-dept_name VARCHAR UNIQUE
+dept_no VARCHAR[20] UNIQUE
+dept_name VARCHAR[20] UNIQUE
 
 titles
 -
-title_id VARCHAR UNIQUE
-title VARCHAR UNIQUE
+title_id VARCHAR[20] UNIQUE
+title VARCHAR[20] UNIQUE
 
 salaries
 -
@@ -19,20 +19,20 @@ dept_emp
 -
 emp_id SERIAL PK
 emp_no INT! FK >- salaries.emp_no
-dept_no VARCHAR FK >- department.dept_no
+dept_no VARCHAR[20] FK >- department.dept_no
 
 dept_manager
 -
-dept_no VARCHAR FK >- department.dept_no
+dept_no VARCHAR[20] FK >- department.dept_no
 emp_no INT FK >- salaries.emp_no
 
 employees
 -
 emp_id SERIAL PK
 emp_no INT FK >- salaries.emp_no
-emp_title_id VARCHAR FK >- titles.title_id
-birth_date VARCHAR
-first_name VARCHAR
-last_name VARCHAR
-sex VARCHAR
-hire_date VARCHAR
+emp_title_id VARCHAR[20] FK >- titles.title_id
+birth_date VARCHAR[10]
+first_name VARCHAR[20]
+last_name VARCHAR[20]
+sex CHAR
+hire_date VARCHAR[10]
